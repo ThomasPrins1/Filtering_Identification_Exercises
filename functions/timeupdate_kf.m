@@ -7,5 +7,7 @@ function [p_kk,P_kk] = timeupdate_kf(p_k,P_k,Q)
     % p_kk  mean of predictive distribution for k+1|k
     % P_kk  covariance of predictive distribution for k+1|k
     
+    p_kk = p_k;
+    P_kk = P_k + Q;
 
 end

@@ -9,5 +9,5 @@ function ftheta = f(theta,mic_locations)
     for mic = 1:length(mic_locations)
         ftheta(mic) = theta(3) + (1/c)*norm(theta(1:2) - mic_locations(mic, :)');
     end
-
+    ftheta = ftheta';
 end

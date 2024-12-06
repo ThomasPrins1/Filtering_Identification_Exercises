@@ -17,7 +17,7 @@ function [th_hat, P_hat] = NLS(yk,th_hat0,R,maxiter,mic_locations)
     for iter = [2:maxiter]
         F = Jacobian(th_hat(:,iter-1), mic_locations);
         ftheta = f(th_hat(:,iter-1), mic_locations);
-        err = yk(iter-1,:)' - ftheta';
+        err = yk(iter-1,:)' - ftheta;
 
         delta_theta = inv(F'*W*F)*F'*W*err;
         th_hat(:,iter) = th_hat(:,iter-1) + delta_theta;
